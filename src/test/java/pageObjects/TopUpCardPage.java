@@ -12,8 +12,10 @@ public class TopUpCardPage {
     public static SelenideElement receiverCardNumberField = $(AppiumBy.xpath("//*[@text='Номер картки']"));
 
     public static SelenideElement fromCardNumberField = $(AppiumBy.xpath("//*[@text='0000 0000 0000 0000']"));
-    public static SelenideElement fromCardExpDateField = $(AppiumBy.xpath("//*[@text='мм/рр']"));
-    public static SelenideElement fromCardCvvField = $(AppiumBy.xpath("//*[@text='CVV']"));
+    public static SelenideElement fromCardExpDateField = $(AppiumBy.xpath("//android.widget.EditText[2]"));
+    public static SelenideElement fromCardCvvField = $(AppiumBy.xpath("//android.widget.EditText[3]"));
+    public static SelenideElement fromCardCvvInfoDialog = $(AppiumBy.accessibilityId("cvvInfoDialog"));
+    public static SelenideElement fromCardErrorMessage = $(AppiumBy.xpath("//*[@text='Будь ласка, перевірте введений номер картки']"));
 
     public static SelenideElement sumField = $(AppiumBy.xpath("//*[@text='Сума від 1,00 до 29999,00 ₴']"));
 

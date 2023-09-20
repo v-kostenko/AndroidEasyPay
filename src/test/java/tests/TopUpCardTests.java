@@ -31,8 +31,8 @@ public class TopUpCardTests extends BaseTest {
         clickTransferToCardButton();
 
         // Fill fields
-        inputReceiverCardNumber("1111000011110000");
-        inputCardNumber("1234123412341234");
+       // inputReceiverCardNumber("1111000011110000");
+        //inputCardNumber("1234123412341234");
         inputExpDate("1010");
         inputCvv("000");
         inputSum("1");

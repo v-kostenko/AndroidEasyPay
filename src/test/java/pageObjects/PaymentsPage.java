@@ -16,6 +16,10 @@ public class PaymentsPage {
     public static SelenideElement profileButton = $(AppiumBy.id("ua.easypay.clientandroid:id/profileIcon"));
 
     public static SelenideElement transferToCardButton = $(AppiumBy.id("ua.easypay.clientandroid:id/btnNewt"));
+    public static SelenideElement topUpMobileButtonNext = $(AppiumBy.id("ua.easypay.clientandroid:id/btnExpand"));
+    public static SelenideElement topUpMobileAmountField = $(AppiumBy.id("ua.easypay.clientandroid:id/etAmountInput"));
+    public static SelenideElement topUpMobileButton = $(AppiumBy.id("ua.easypay.clientandroid:id/btnTopUpPhone"));
+
 
 
     @Step("Click on the 'Profile' button")

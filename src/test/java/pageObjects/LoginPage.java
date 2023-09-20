@@ -11,7 +11,7 @@ import io.qameta.allure.Step;
 
 public class LoginPage {
     public static SelenideElement inputPhoneFieldLoginPage = $(AppiumBy.className("android.widget.EditText"));
-    public static SelenideElement continueButtonLoginPage = $(AppiumBy.className("android.widget.Button"));
+    public static SelenideElement continueButtonLoginPage = $(AppiumBy.xpath("//*[@text='Продовжити']"));
 
     @Step("Click in the 'Input phone' field")
     public static void clickInTheInputPhoneField() {

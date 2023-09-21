@@ -4,9 +4,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 import static constatns.Constants.PHONE;
 import static io.qameta.allure.Allure.step;
+import static pageObjects.LoginPage.clickClearInputFieldButton;
 import static pageObjects.LoginPage.clickContinueButtonTheLoginPage;
 import static pageObjects.LoginPage.clickInTheInputPhoneField;
 import static pageObjects.LoginPage.continueButtonLoginPage;
+import static pageObjects.LoginPage.getTitle;
 import static pageObjects.LoginPage.inputPhone;
 import static pageObjects.LoginPage.inputPhoneFieldLoginPage;
 import static pageObjects.LoginPage.isContinueButtonEnable;
@@ -18,6 +20,7 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 
 public class LoginTests extends BaseTest {
@@ -30,18 +33,26 @@ public class LoginTests extends BaseTest {
         Thread.sleep(1000);
         clickContinueButtonTheLoginPage();
         enterPin();
-//        step("фвфвф", () -> {
+//        step("", () -> {
 //            //  Assert.assertEquals();
 //        });
     }
 
     @Test
-    public void foo() {
+    public void checkContinueButtonStatus() {
         clickInTheInputPhoneField();
         inputPhone("999");
-        Assert.assertTrue( isContinueButtonEnable());
-        // input less phone number
-        // check that continue button is Disable
+        Assert.assertEquals(getTitle(), "Введіть номер телефону");
+        Assert.assertTrue(isContinueButtonEnable());
+    }
+
+
+    @Test
+    public void clearInputField() {
+        inputPhone("999999999");
+        // check that 'Continue' button is clickable
+        clickClearInputFieldButton();
+        // check that 'Continue' button is not clickable
     }
 
 

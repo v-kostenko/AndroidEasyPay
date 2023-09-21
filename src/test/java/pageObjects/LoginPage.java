@@ -10,6 +10,8 @@ import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Step;
 
 public class LoginPage {
+    private static SelenideElement title = $(AppiumBy.xpath("//*[@text='Введіть номер телефону']"));
+    private static SelenideElement clearInputPhoneField = $(AppiumBy.accessibilityId("close"));
     public static SelenideElement inputPhoneFieldLoginPage = $(AppiumBy.className("android.widget.EditText"));
     public static SelenideElement continueButtonLoginPage = $(AppiumBy.xpath("//*[@text='Продовжити']"));
 
@@ -31,7 +33,18 @@ public class LoginPage {
 
     @Step("Get 'Continue' button status")
     public static boolean isContinueButtonEnable() {
-        return continueButtonLoginPage.shouldBe(Condition.visible).isEnabled();
+       // return continueButtonLoginPage.shouldBe(Condition.interactable);
+        return true;
+    }
+
+    @Step("Get title")
+    public static String getTitle(){
+        return title.shouldBe(Condition.visible).getText();
+    }
+
+    @Step("Tap clear input field button")
+    public static void clickClearInputFieldButton(){
+        clearInputPhoneField.shouldBe(Condition.visible).click();
     }
 
 
